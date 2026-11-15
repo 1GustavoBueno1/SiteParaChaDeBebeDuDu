@@ -204,7 +204,11 @@
         $('pix-titular').textContent = PIX.titular || '';
         pixBloco.classList.remove('oculto');
       } else {
-        pixBloco.classList.add('oculto');
+        $('pix-tipo-rotulo').textContent = 'Chave';
+        $('pix-chave').textContent = 'Chave Pix ainda não cadastrada';
+        $('pix-titular').textContent = '—';
+        $('copiar').classList.add('oculto');
+        pixBloco.classList.remove('oculto');
       }
     } else {
       $('sucesso-texto').textContent = '"' + item + '" ficou reservado no seu nome. O Pedro agradece! 💙';
