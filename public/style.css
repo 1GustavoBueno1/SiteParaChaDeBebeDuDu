@@ -124,6 +124,11 @@ h1 span { color: var(--azul); }
 .botao.pequeno { font-size: 15px; padding: 10px 14px; }
 .botao.secundario { background: var(--bege); color: var(--marinho); box-shadow: 0 4px 0 #dcc6a6; margin: 6px 0 4px; }
 .botao.secundario:hover { background: #ecd6b6; }
+.desfazer {
+  align-self: flex-start; border: 0; background: transparent; color: var(--azul-forte); cursor: pointer;
+  font: inherit; font-size: 14px; font-weight: 700; text-decoration: underline; padding: 0;
+}
+.desfazer:disabled { opacity: .6; cursor: wait; }
 .vazio { text-align: center; color: var(--texto-suave); padding: 40px 0; }
 
 .rodape { text-align: center; color: var(--texto-suave); padding: 10px 16px 40px; font-size: 14px; }

@@ -1,4 +1,7 @@
-const { put, list, head } = require('@vercel/blob');
+const { put, list, head, del } = require('@vercel/blob');
+const crypto = require('crypto');
+
+const hash = (t) => crypto.createHash('sha256').update(String(t)).digest('hex');
 const categorias = require('./_presentes.json');
 
 const PREFIXO = 'reservas/';
@@ -18,10 +21,14 @@ async function lerReservas() {
   await Promise.all(
     blobs.map(async (b) => {
       try {
-        const resp = await fetch(b.url, { cache: 'no-store' });
+        const versao = new Date(b.uploadedAt).getTime() || Date.now();
+        const resp = await fetch(b.url + '?v=' + versao, { cache: 'no-store' });
         if (!resp.ok) return;
         const dados = await resp.json();
-        if (itensPorId.has(dados.id)) reservas[dados.id] = dados;
+        if (itensPorId.has(dados.id)) {
+          const { tokenHash, ...publico } = dados;
+          reservas[dados.id] = publico;
+        }
       } catch (_) { /* ignora blob ilegível */ }
     })
   );
@@ -60,12 +67,14 @@ module.exports = async (req, res) => {
       if (nome.length < 2) return res.status(400).end(JSON.stringify({ erro: 'Informe seu nome.' }));
 
       const reserva = { id, item: item.nome, nome, forma, data: new Date().toISOString() };
+      const token = crypto.randomBytes(24).toString('hex');
       try {
-        await put(PREFIXO + id + '.json', JSON.stringify(reserva), {
+        await put(PREFIXO + id + '.json', JSON.stringify({ ...reserva, tokenHash: hash(token) }), {
           access: 'public',
           addRandomSuffix: false,
           allowOverwrite: false,
           contentType: 'application/json',
+          cacheControlMaxAge: 60,
         });
       } catch (e) {
         let existe = /already exists|overwrite/i.test(String(e && e.message));
@@ -75,10 +84,30 @@ module.exports = async (req, res) => {
         }
         throw e;
       }
-      return res.status(201).end(JSON.stringify({ ok: true, reserva }));
+      return res.status(201).end(JSON.stringify({ ok: true, reserva, token }));
     }
 
-    res.setHeader('Allow', 'GET, POST');
+    if (req.method === 'DELETE') {
+      let corpo;
+      try { corpo = await lerCorpo(req); } catch (_) {
+        return res.status(400).end(JSON.stringify({ erro: 'Pedido inválido.' }));
+      }
+      const id = String(corpo.id || '');
+      const token = String(corpo.token || '');
+      if (!itensPorId.has(id) || !token) return res.status(400).end(JSON.stringify({ erro: 'Pedido inválido.' }));
+      let info;
+      try { info = await head(PREFIXO + id + '.json'); } catch (_) {
+        return res.status(404).end(JSON.stringify({ erro: 'Esta escolha não existe mais.' }));
+      }
+      const atual = await (await fetch(info.url + '?v=' + Date.now(), { cache: 'no-store' })).json();
+      if (!atual.tokenHash || atual.tokenHash !== hash(token)) {
+        return res.status(403).end(JSON.stringify({ erro: 'Só quem fez a escolha pode desfazê-la, no mesmo aparelho.' }));
+      }
+      await del(info.url);
+      return res.status(200).end(JSON.stringify({ ok: true }));
+    }
+
+    res.setHeader('Allow', 'GET, POST, DELETE');
     return res.status(405).end(JSON.stringify({ erro: 'Método não permitido.' }));
   } catch (e) {
     console.error(e);

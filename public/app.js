@@ -16,6 +16,43 @@
     return String(t).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
   }
 
+  function lerTokens() {
+    try { return JSON.parse(localStorage.getItem('cha-tokens') || '{}') || {}; } catch (_) { return {}; }
+  }
+  function salvarToken(id, token) {
+    var t = lerTokens();
+    if (token) t[id] = token; else delete t[id];
+    try { localStorage.setItem('cha-tokens', JSON.stringify(t)); } catch (_) {}
+  }
+
+  function desfazer(item, botao) {
+    var token = lerTokens()[item.id];
+    if (!token) return;
+    if (!window.confirm('Desfazer sua escolha de "' + item.nome + '"? O item volta a ficar disponível.')) return;
+    botao.disabled = true; botao.textContent = 'Desfazendo…';
+    fetch('/api/reservas', {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: item.id, token: token })
+    })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) { return { r: r, d: d }; }); })
+      .then(function (x) {
+        if (x.r.ok || x.r.status === 404) {
+          salvarToken(item.id, null);
+          delete estado.reservas[item.id];
+          render();
+          aviso('Escolha desfeita. O item está disponível novamente.');
+        } else {
+          aviso(x.d.erro || 'Não foi possível desfazer agora.');
+          botao.disabled = false; botao.textContent = 'Desfazer minha escolha';
+        }
+      })
+      .catch(function () {
+        aviso('Sem conexão. Tente novamente.');
+        botao.disabled = false; botao.textContent = 'Desfazer minha escolha';
+      });
+  }
+
   function el(tag, cls, texto) {
     var e = document.createElement(tag);
     if (cls) e.className = cls;
@@ -80,6 +117,12 @@
           txt.appendChild(document.createTextNode(r.forma === 'pix' ? ' · via Pix' : ' · presente'));
           selo.appendChild(txt);
           li.appendChild(selo);
+          if (lerTokens()[item.id]) {
+            var d = el('button', 'desfazer', 'Desfazer minha escolha');
+            d.type = 'button';
+            d.addEventListener('click', function () { desfazer(item, d); });
+            li.appendChild(d);
+          }
         } else {
           var b = el('button', 'botao pequeno', 'Escolher este presente');
           b.type = 'button';
@@ -206,6 +249,7 @@
         if (x.r.ok) {
           try { localStorage.setItem('cha-nome', nome); } catch (_) {}
           estado.reservas[item.id] = x.d.reserva;
+          if (x.d.token) salvarToken(item.id, x.d.token);
           render();
           mostrarSucesso(nome, forma, item.nome);
         } else {
