@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chá do Pedro 💙</title>
+  <meta name="description" content="Lista de presentes do Chá de Bebê do Pedro — Eduardo Moreira e Mirian.">
+  <meta property="og:title" content="Chá do Pedro 💙">
+  <meta property="og:description" content="Escolha um presente para o Pedro ou contribua via Pix.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💙</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="ceu" aria-hidden="true">
+    <span class="nuvem n1"></span><span class="nuvem n2"></span><span class="nuvem n3"></span>
+    <span class="estrela e1">★</span><span class="estrela e2">✦</span><span class="estrela e3">★</span><span class="estrela e4">✦</span><span class="estrela e5">★</span>
+  </div>
+
+  <header class="topo">
+    <svg class="ursinho" viewBox="0 0 120 120" aria-hidden="true">
+      <circle cx="30" cy="32" r="16" fill="#c9a37a"/><circle cx="30" cy="32" r="8" fill="#f3d9bd"/>
+      <circle cx="90" cy="32" r="16" fill="#c9a37a"/><circle cx="90" cy="32" r="8" fill="#f3d9bd"/>
+      <circle cx="60" cy="64" r="40" fill="#d8b48c"/>
+      <ellipse cx="60" cy="78" rx="18" ry="14" fill="#f3d9bd"/>
+      <circle cx="45" cy="58" r="5" fill="#3b3b4f"/><circle cx="75" cy="58" r="5" fill="#3b3b4f"/>
+      <circle cx="46.5" cy="56.5" r="1.6" fill="#fff"/><circle cx="76.5" cy="56.5" r="1.6" fill="#fff"/>
+      <ellipse cx="60" cy="72" rx="6" ry="4.5" fill="#3b3b4f"/>
+      <path d="M54 80 q6 6 12 0" stroke="#3b3b4f" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <circle cx="36" cy="72" r="6" fill="#f6b8b8" opacity=".6"/><circle cx="84" cy="72" r="6" fill="#f6b8b8" opacity=".6"/>
+      <path d="M38 98 l22 -8 l22 8 l-22 8z" fill="#5b8fd6"/><circle cx="60" cy="98" r="5" fill="#3f73bd"/>
+    </svg>
+    <p class="sobretitulo">Chá de bebê</p>
+    <h1>Chá do <span>Pedro</span> 💙</h1>
+    <p class="pais" id="pais"></p>
+    <p class="intro">
+      Cada item da lista é único. Escolha um presente e ele fica reservado no seu nome.
+      Se preferir, você também pode contribuir com um Pix de qualquer valor.
+    </p>
+    <div class="progresso" aria-live="polite">
+      <div class="barra"><div class="barra-cheia" id="barra"></div></div>
+      <p id="contador">Carregando a lista…</p>
+    </div>
+  </header>
+
+  <nav class="ferramentas" aria-label="Filtros da lista">
+    <div class="busca">
+      <input type="search" id="busca" placeholder="Buscar presente…" aria-label="Buscar presente">
+    </div>
+    <div class="filtros" role="group" aria-label="Mostrar">
+      <button type="button" class="filtro ativo" data-filtro="todos">Todos</button>
+      <button type="button" class="filtro" data-filtro="disponiveis">Disponíveis</button>
+      <button type="button" class="filtro" data-filtro="escolhidos">Já escolhidos</button>
+    </div>
+    <div class="atalhos" id="atalhos"></div>
+  </nav>
+
+  <main id="lista" class="lista"></main>
+
+  <footer class="rodape">
+    <p>Feito com carinho para a chegada do Pedro 💙</p>
+  </footer>
+
+  <dialog id="modal" class="modal">
+    <form method="dialog" id="form" class="modal-conteudo" novalidate>
+      <button type="button" class="fechar" id="fechar" aria-label="Fechar">×</button>
+      <p class="modal-sub">Você escolheu</p>
+      <h2 id="modal-item"></h2>
+
+      <label class="campo">
+        <span>Seu nome</span>
+        <input type="text" id="nome" maxlength="80" autocomplete="name" required placeholder="Como quer aparecer na lista">
+      </label>
+
+      <fieldset class="formas">
+        <legend>Como você quer presentear?</legend>
+        <label class="forma">
+          <input type="radio" name="forma" value="presente" checked>
+          <span><strong>🎁 Dar o presente</strong><small>Você compra e entrega o item ao casal.</small></span>
+        </label>
+        <label class="forma">
+          <input type="radio" name="forma" value="pix">
+          <span><strong>💠 Enviar via Pix</strong><small>Valor livre — você escolhe quanto enviar.</small></span>
+        </label>
+      </fieldset>
+
+      <p class="erro" id="erro" role="alert"></p>
+      <button type="submit" class="botao" id="confirmar">Confirmar escolha</button>
+    </form>
+
+    <div class="modal-conteudo oculto" id="sucesso">
+      <button type="button" class="fechar" data-fechar aria-label="Fechar">×</button>
+      <div class="festa" aria-hidden="true">🎉</div>
+      <h2>Obrigado, <span id="sucesso-nome"></span>!</h2>
+      <p id="sucesso-texto"></p>
+      <div class="pix oculto" id="pix-bloco">
+        <p class="pix-titulo">Dados do Pix</p>
+        <dl>
+          <dt id="pix-tipo-rotulo">Chave</dt><dd id="pix-chave"></dd>
+          <dt>Titular</dt><dd id="pix-titular"></dd>
+        </dl>
+        <button type="button" class="botao secundario" id="copiar">Copiar chave Pix</button>
+        <p class="pix-obs">O valor é livre. Abra o app do seu banco, escolha Pix e cole a chave.</p>
+      </div>
+      <button type="button" class="botao" data-fechar>Voltar para a lista</button>
+    </div>
+  </dialog>
+
+  <div id="aviso" class="aviso" role="status" aria-live="polite"></div>
+
+  <script src="/config.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

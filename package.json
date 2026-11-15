@@ -1,0 +1,10 @@
+{
+  "name": "cha-do-pedro",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Lista de presentes do Chá do Pedro",
+  "engines": { "node": "22.x" },
+  "dependencies": {
+    "@vercel/blob": "2.0.0"
+  }
+}

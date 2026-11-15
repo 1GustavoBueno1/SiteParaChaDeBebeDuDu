@@ -1,0 +1,537 @@
+[
+  {
+    "nome": "Roupas – tamanhos P, M, G, GG e 1 ano",
+    "itens": [
+      {
+        "id": "body-manga-curta-m",
+        "nome": "Body manga curta M"
+      },
+      {
+        "id": "body-manga-curta-g",
+        "nome": "Body manga curta G"
+      },
+      {
+        "id": "body-manga-curta-gg",
+        "nome": "Body manga curta GG"
+      },
+      {
+        "id": "body-manga-curta-1-ano",
+        "nome": "Body manga curta 1 ano"
+      },
+      {
+        "id": "body-manga-longa-m",
+        "nome": "Body manga longa M"
+      },
+      {
+        "id": "body-manga-longa-g",
+        "nome": "Body manga longa G"
+      },
+      {
+        "id": "body-manga-longa-gg",
+        "nome": "Body manga longa GG"
+      },
+      {
+        "id": "body-manga-longa-1-ano",
+        "nome": "Body manga longa 1 ano"
+      },
+      {
+        "id": "macacao-de-algodao-m",
+        "nome": "Macacão de algodão M"
+      },
+      {
+        "id": "macacao-de-algodao-g",
+        "nome": "Macacão de algodão G"
+      },
+      {
+        "id": "macacao-de-algodao-gg",
+        "nome": "Macacão de algodão GG"
+      },
+      {
+        "id": "pijama-de-duas-pecas-m",
+        "nome": "Pijama de duas peças M"
+      },
+      {
+        "id": "pijama-de-duas-pecas-g",
+        "nome": "Pijama de duas peças G"
+      },
+      {
+        "id": "pijama-de-duas-pecas-gg",
+        "nome": "Pijama de duas peças GG"
+      },
+      {
+        "id": "conjunto-de-moletom-m",
+        "nome": "Conjunto de moletom M"
+      },
+      {
+        "id": "conjunto-de-moletom-g",
+        "nome": "Conjunto de moletom G"
+      },
+      {
+        "id": "conjunto-de-moletom-gg",
+        "nome": "Conjunto de moletom GG"
+      },
+      {
+        "id": "conjunto-de-verao",
+        "nome": "Conjunto de verão"
+      },
+      {
+        "id": "conjunto-de-inverno",
+        "nome": "Conjunto de inverno"
+      },
+      {
+        "id": "calcas-de-algodao",
+        "nome": "Calças de algodão"
+      },
+      {
+        "id": "shorts-infantil",
+        "nome": "Shorts infantil"
+      },
+      {
+        "id": "camisetas-basicas",
+        "nome": "Camisetas básicas"
+      },
+      {
+        "id": "camisetas-de-manga-longa",
+        "nome": "Camisetas de manga longa"
+      },
+      {
+        "id": "jardineira-infantil",
+        "nome": "Jardineira infantil"
+      },
+      {
+        "id": "macacao-de-passeio",
+        "nome": "Macacão de passeio"
+      },
+      {
+        "id": "jaqueta-infantil",
+        "nome": "Jaqueta infantil"
+      },
+      {
+        "id": "casaquinho-de-trico",
+        "nome": "Casaquinho de tricô"
+      },
+      {
+        "id": "colete-infantil",
+        "nome": "Colete infantil"
+      },
+      {
+        "id": "conjunto-para-sair",
+        "nome": "Conjunto para sair"
+      },
+      {
+        "id": "calca-jeans-infantil",
+        "nome": "Calça jeans infantil"
+      },
+      {
+        "id": "bermuda-infantil",
+        "nome": "Bermuda infantil"
+      },
+      {
+        "id": "meias-antiderrapantes",
+        "nome": "Meias antiderrapantes"
+      },
+      {
+        "id": "meias-de-algodao",
+        "nome": "Meias de algodão"
+      },
+      {
+        "id": "sapatinho-para-passeio",
+        "nome": "Sapatinho para passeio"
+      },
+      {
+        "id": "tenis-infantil",
+        "nome": "Tênis infantil"
+      },
+      {
+        "id": "sandalia-infantil",
+        "nome": "Sandália infantil"
+      },
+      {
+        "id": "chinelo-infantil",
+        "nome": "Chinelo infantil"
+      }
+    ]
+  },
+  {
+    "nome": "Banho e higiene",
+    "itens": [
+      {
+        "id": "toalha-de-banho-com-capuz",
+        "nome": "Toalha de banho com capuz"
+      },
+      {
+        "id": "toalha-de-banho-grande",
+        "nome": "Toalha de banho grande"
+      },
+      {
+        "id": "toalha-com-forro-de-fralda",
+        "nome": "Toalha com forro de fralda"
+      },
+      {
+        "id": "toalha-fralda",
+        "nome": "Toalha fralda"
+      },
+      {
+        "id": "sabonete-liquido",
+        "nome": "Sabonete líquido"
+      },
+      {
+        "id": "shampoo-infantil",
+        "nome": "Shampoo infantil"
+      },
+      {
+        "id": "condicionador-infantil",
+        "nome": "Condicionador infantil"
+      },
+      {
+        "id": "hidratante-infantil",
+        "nome": "Hidratante infantil"
+      },
+      {
+        "id": "creme-para-assaduras",
+        "nome": "Creme para assaduras"
+      },
+      {
+        "id": "lencos-umedecidos",
+        "nome": "Lenços umedecidos"
+      },
+      {
+        "id": "algodao",
+        "nome": "Algodão"
+      },
+      {
+        "id": "cotonetes-infantis",
+        "nome": "Cotonetes infantis"
+      },
+      {
+        "id": "kit-manicure-infantil",
+        "nome": "Kit manicure infantil"
+      },
+      {
+        "id": "aspirador-nasal",
+        "nome": "Aspirador nasal"
+      },
+      {
+        "id": "termometro-digital",
+        "nome": "Termômetro digital"
+      },
+      {
+        "id": "termometro-de-banho",
+        "nome": "Termômetro de banho"
+      },
+      {
+        "id": "kit-higiene",
+        "nome": "Kit higiene"
+      },
+      {
+        "id": "necessaire-infantil",
+        "nome": "Necessaire infantil"
+      },
+      {
+        "id": "organizador-de-produtos-de-banho",
+        "nome": "Organizador de produtos de banho"
+      },
+      {
+        "id": "banheira-dobravel",
+        "nome": "Banheira dobrável"
+      },
+      {
+        "id": "tapete-antiderrapante-para-banheiro",
+        "nome": "Tapete antiderrapante para banheiro"
+      }
+    ]
+  },
+  {
+    "nome": "Alimentação",
+    "itens": [
+      {
+        "id": "prato-com-ventosa",
+        "nome": "Prato com ventosa"
+      },
+      {
+        "id": "prato-com-divisorias",
+        "nome": "Prato com divisórias"
+      },
+      {
+        "id": "bowl-infantil",
+        "nome": "Bowl infantil"
+      },
+      {
+        "id": "kit-de-pratos",
+        "nome": "Kit de pratos"
+      },
+      {
+        "id": "colheres-de-silicone",
+        "nome": "Colheres de silicone"
+      },
+      {
+        "id": "kit-de-talheres-infantis",
+        "nome": "Kit de talheres infantis"
+      },
+      {
+        "id": "copo-de-treinamento",
+        "nome": "Copo de treinamento"
+      },
+      {
+        "id": "copo-com-canudo",
+        "nome": "Copo com canudo"
+      },
+      {
+        "id": "copo-antivazamento",
+        "nome": "Copo antivazamento"
+      },
+      {
+        "id": "garrafinha-infantil",
+        "nome": "Garrafinha infantil"
+      },
+      {
+        "id": "mamadeira-anticolica",
+        "nome": "Mamadeira anticólica"
+      },
+      {
+        "id": "mamadeira-de-330-ml",
+        "nome": "Mamadeira de 330 ml"
+      },
+      {
+        "id": "bicos-de-mamadeira",
+        "nome": "Bicos de mamadeira"
+      },
+      {
+        "id": "escova-para-mamadeira",
+        "nome": "Escova para mamadeira"
+      },
+      {
+        "id": "esterilizador-de-mamadeiras",
+        "nome": "Esterilizador de mamadeiras"
+      },
+      {
+        "id": "bolsa-termica-para-alimentos",
+        "nome": "Bolsa térmica para alimentos"
+      },
+      {
+        "id": "cadeira-de-alimentacao-portatil",
+        "nome": "Cadeira de alimentação portátil"
+      },
+      {
+        "id": "kit-de-alimentacao-completo",
+        "nome": "Kit de alimentação completo"
+      },
+      {
+        "id": "dosador-de-leite-em-po",
+        "nome": "Dosador de leite em pó"
+      },
+      {
+        "id": "garrafa-termica",
+        "nome": "Garrafa térmica"
+      },
+      {
+        "id": "almofada-de-amamentacao",
+        "nome": "Almofada de amamentação"
+      },
+      {
+        "id": "aquecedor-de-mamadeira",
+        "nome": "Aquecedor de mamadeira"
+      }
+    ]
+  },
+  {
+    "nome": "Enxoval e itens para o dia a dia",
+    "itens": [
+      {
+        "id": "jogo-de-lencol-para-berco",
+        "nome": "Jogo de lençol para berço"
+      },
+      {
+        "id": "lencol-avulso-para-berco",
+        "nome": "Lençol avulso para berço"
+      },
+      {
+        "id": "manta-de-algodao",
+        "nome": "Manta de algodão"
+      },
+      {
+        "id": "cueiros-grandes",
+        "nome": "Cueiros grandes"
+      },
+      {
+        "id": "kit-de-paninhos-de-boca",
+        "nome": "Kit de paninhos de boca"
+      },
+      {
+        "id": "paninhos-de-ombro",
+        "nome": "Paninhos de ombro"
+      },
+      {
+        "id": "fraldinhas-de-pano-para-apoio",
+        "nome": "Fraldinhas de pano para apoio"
+      },
+      {
+        "id": "toalhinhas-multiuso",
+        "nome": "Toalhinhas multiuso"
+      },
+      {
+        "id": "organizador-de-gavetas",
+        "nome": "Organizador de gavetas"
+      },
+      {
+        "id": "colmeia-organizadora",
+        "nome": "Colmeia organizadora"
+      },
+      {
+        "id": "cabides-infantis",
+        "nome": "Cabides infantis"
+      },
+      {
+        "id": "cesto-para-roupas-sujas",
+        "nome": "Cesto para roupas sujas"
+      },
+      {
+        "id": "cesto-organizador",
+        "nome": "Cesto organizador"
+      },
+      {
+        "id": "sacos-para-organizar-roupas",
+        "nome": "Sacos para organizar roupas"
+      },
+      {
+        "id": "trocador-portatil",
+        "nome": "Trocador portátil"
+      },
+      {
+        "id": "trocador-para-comoda",
+        "nome": "Trocador para cômoda"
+      },
+      {
+        "id": "porta-documentos-do-bebe",
+        "nome": "Porta-documentos do bebê"
+      },
+      {
+        "id": "bolsa-maternidade",
+        "nome": "Bolsa maternidade"
+      },
+      {
+        "id": "mochila-para-passeios",
+        "nome": "Mochila para passeios"
+      },
+      {
+        "id": "organizador-de-bolsa",
+        "nome": "Organizador de bolsa"
+      },
+      {
+        "id": "necessaire-para-passeios",
+        "nome": "Necessaire para passeios"
+      }
+    ]
+  },
+  {
+    "nome": "Itens para passeio e rotina",
+    "itens": [
+      {
+        "id": "carrinho-de-passeio",
+        "nome": "Carrinho de passeio"
+      },
+      {
+        "id": "bebe-conforto",
+        "nome": "Bebê conforto"
+      },
+      {
+        "id": "canguru-ergonomico",
+        "nome": "Canguru ergonômico"
+      },
+      {
+        "id": "bolsa-termica",
+        "nome": "Bolsa térmica"
+      },
+      {
+        "id": "garrafa-termica-para-agua",
+        "nome": "Garrafa térmica para água"
+      },
+      {
+        "id": "organizador-para-brinquedos",
+        "nome": "Organizador para brinquedos"
+      },
+      {
+        "id": "cadeirinha-de-descanso",
+        "nome": "Cadeirinha de descanso"
+      },
+      {
+        "id": "cadeirinha-de-alimentacao",
+        "nome": "Cadeirinha de alimentação"
+      }
+    ]
+  },
+  {
+    "nome": "Brinquedos e desenvolvimento",
+    "itens": [
+      {
+        "id": "tapete-sensorial",
+        "nome": "Tapete sensorial"
+      },
+      {
+        "id": "mordedores-de-silicone",
+        "nome": "Mordedores de silicone"
+      },
+      {
+        "id": "chocalhos",
+        "nome": "Chocalhos"
+      },
+      {
+        "id": "brinquedos-musicais",
+        "nome": "Brinquedos musicais"
+      },
+      {
+        "id": "livros-sensoriais",
+        "nome": "Livros sensoriais"
+      },
+      {
+        "id": "livros-de-banho",
+        "nome": "Livros de banho"
+      },
+      {
+        "id": "livros-de-historias-infantis",
+        "nome": "Livros de histórias infantis"
+      },
+      {
+        "id": "brinquedos-de-encaixe",
+        "nome": "Brinquedos de encaixe"
+      },
+      {
+        "id": "andador-de-empurrar-para-quando-estiver-na-fase-adequada",
+        "nome": "Andador de empurrar para quando estiver na fase adequada"
+      },
+      {
+        "id": "brinquedos-para-piscina-de-bolinhas",
+        "nome": "Brinquedos para piscina de bolinhas"
+      },
+      {
+        "id": "instrumentos-musicais-infantis",
+        "nome": "Instrumentos musicais infantis"
+      },
+      {
+        "id": "piscina-de-bolinhas",
+        "nome": "Piscina de bolinhas"
+      }
+    ]
+  },
+  {
+    "nome": "Outros itens úteis",
+    "itens": [
+      {
+        "id": "umidificador-de-ar",
+        "nome": "Umidificador de ar"
+      },
+      {
+        "id": "lixeira-com-pedal-para-o-quarto",
+        "nome": "Lixeira com pedal para o quarto"
+      },
+      {
+        "id": "luminaria-noturna",
+        "nome": "Luminária noturna"
+      },
+      {
+        "id": "baba",
+        "nome": "Babá"
+      }
+    ]
+  }
+]
