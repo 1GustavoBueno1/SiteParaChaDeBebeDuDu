@@ -25,11 +25,6 @@ async function lerReservas() {
         const resp = await fetch(b.url + '?v=' + versao, { cache: 'no-store' });
         if (!resp.ok) return;
         const dados = await resp.json();
-        // LIMPEZA TEMPORÁRIA: remove a reserva de teste criada durante a verificação do site
-        if (dados.id === 'chocalhos' && dados.nome === 'Teste Dois' && dados.data === '2026-11-15T21:16:12.434Z') {
-          await del(b.url);
-          return;
-        }
         if (itensPorId.has(dados.id)) {
           const { tokenHash, ...publico } = dados;
           reservas[dados.id] = publico;
