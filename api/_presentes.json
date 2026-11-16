@@ -156,6 +156,14 @@
     "nome": "Banho e higiene",
     "itens": [
       {
+        "id": "fraldas-g",
+        "nome": "Fraldas G"
+      },
+      {
+        "id": "fraldas-gg",
+        "nome": "Fraldas GG"
+      },
+      {
         "id": "toalha-de-banho-com-capuz",
         "nome": "Toalha de banho com capuz"
       },
